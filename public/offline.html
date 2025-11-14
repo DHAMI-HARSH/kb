@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline - Knowledge Bank</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #0f172a 0%, #1a0f3d 50%, #0f172a 100%);
+      color: #e0e0e0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .offline-container {
+      text-align: center;
+      max-width: 500px;
+      background: rgba(127, 90, 240, 0.1);
+      border: 1px solid rgba(127, 90, 240, 0.2);
+      border-radius: 16px;
+      padding: 3rem 2rem;
+    }
+
+    .offline-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #f0f0f0;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #b0b0b0;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .offline-tips {
+      text-align: left;
+      background: rgba(240, 240, 240, 0.03);
+      border-left: 3px solid #f0f0f0;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+
+    .offline-tips h2 {
+      font-size: 0.9rem;
+      color: #f0f0f0;
+      margin-bottom: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .offline-tips ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .offline-tips li {
+      font-size: 0.9rem;
+      color: #a0a0a0;
+      margin-bottom: 0.5rem;
+    }
+
+    .offline-tips li:before {
+      content: "✓ ";
+      color: #7f5af0;
+      font-weight: bold;
+      margin-right: 0.5rem;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      background: rgba(127, 90, 240, 0.18);
+      border: 2px solid rgba(127, 90, 240, 0.28);
+      color: #0b1220;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    button:hover {
+      background: rgba(127, 90, 240, 0.5);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(127, 90, 240, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-container">
+    <div class="offline-icon">📡</div>
+    <h1>You're Offline</h1>
+    <p>It looks like you've lost your internet connection. Don't worry, you can still access cached content while offline.</p>
+    
+    <div class="offline-tips">
+      <h2>What you can do:</h2>
+      <ul>
+        <li>Browse previously visited articles</li>
+        <li>View cached search results</li>
+        <li>Check app information</li>
+      </ul>
+    </div>
+
+    <button onclick="location.reload()">Try Again</button>
+  </div>
+</body>
+</html>

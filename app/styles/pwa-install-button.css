@@ -1,0 +1,76 @@
+.pwa-install-button {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.2), rgba(127, 90, 240, 0.2));
+  border: 2px solid var(--accent);
+  border-radius: 50px;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.pwa-install-button:hover {
+  background: linear-gradient(135deg, rgba(var(--accent-rgb), 0.3), rgba(127, 90, 240, 0.3));
+  transform: translateX(-8px);
+  box-shadow: 0 8px 24px rgba(var(--accent-rgb), 0.3);
+}
+
+.pwa-install-button:active {
+  transform: translateX(-4px) scale(0.95);
+}
+
+.pwa-icon {
+  font-size: 1.2rem;
+  animation: bounce 1s ease-in-out infinite;
+}
+
+.pwa-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 768px) {
+  .pwa-install-button {
+    padding: 0.65rem 1rem;
+    font-size: 0.85rem;
+    bottom: 90px;
+    right: 10px;
+  }
+
+  .pwa-text {
+    display: none;
+  }
+
+  .pwa-icon {
+    font-size: 1.5rem;
+  }
+}

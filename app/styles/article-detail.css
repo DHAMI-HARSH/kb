@@ -1,0 +1,233 @@
+.article-detail-layout {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  gap: 2rem;
+  padding: 6rem 2rem 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(to bottom, #0f172a 0%, #1a0f3d 50%, #0f172a 100%);
+}
+
+@media (max-width: 1200px) {
+  .article-detail-layout {
+    grid-template-columns: 1fr;
+    padding: 6rem 1.5rem 2rem 1.5rem;
+  }
+
+  .article-chatbot-sidebar {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .article-detail-layout {
+    padding: 5rem 1rem 2rem 1rem;
+    gap: 1.5rem;
+  }
+}
+
+.article-main {
+  min-height: auto;
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .article-detail-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .article-chatbot-sidebar {
+    order: -1;
+  }
+}
+
+
+.chatbot-overlay {
+  position: fixed;
+  inset: 0;
+  background: transparent;
+  pointer-events: auto; /* keep click-to-close */
+  filter: none !important;
+  backdrop-filter: none !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Added chat button styling */
+.article-chat-button {
+  position: fixed;
+  bottom: 100px;
+  right: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1000;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(127, 90, 240, 0.4);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.article-chat-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(127, 90, 240, 0.6);
+}
+
+.article-chat-button:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .article-chat-button {
+    bottom: 80px;
+    right: 1rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Added chatbot modal styling with slide-in animation */
+.article-chatbot-modal {
+  position: fixed;
+  top: 80px;
+  right: -450px;
+  width: 400px;
+  height: calc(100vh - 100px);
+  background: #0f172a !important;
+  border-left: 1px solid rgba(127, 90, 240, 0.2);
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+  /* Removed blur effect */
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.5);
+  animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.article-chatbot-modal.open {
+  animation: slideInRight 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    right: -450px;
+    opacity: 0;
+  }
+  to {
+    right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    right: 0;
+    opacity: 1;
+  }
+  to {
+    right: -450px;
+    opacity: 0;
+  }
+}
+
+/* Added close button for chatbot modal */
+.chatbot-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(var(--accent-rgb), 0.15);
+  border: 1px solid rgba(var(--accent-rgb), 0.3);
+  border-radius: 6px;
+  color: var(--accent);
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chatbot-close-button:hover {
+  background: rgba(var(--accent-rgb), 0.25);
+  border-color: rgba(var(--accent-rgb), 0.5);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 1024px) {
+  .article-chatbot-modal {
+    width: 100%;
+    right: -100%;
+  }
+
+  @keyframes slideInRight {
+    from {
+      right: -100%;
+      opacity: 0;
+    }
+    to {
+      right: 0;
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideOutRight {
+    from {
+      right: 0;
+      opacity: 1;
+    }
+    to {
+      right: -100%;
+      opacity: 0;
+    }
+  }
+}
+
+.article-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+  gap: 2rem;
+}
+
+.article-not-found h1 {
+  color: var(--accent);
+  font-size: 2rem;
+}
+
+.article-not-found button {
+  padding: 0.75rem 1.5rem;
+  background: #7f5af0;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.article-not-found button:hover {
+  background: var(--accent);
+  color: #0f172a;
+}

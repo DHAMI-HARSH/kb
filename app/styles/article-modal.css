@@ -1,0 +1,125 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.modal-content {
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  border-radius: 8px;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideInUp 0.3s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #b0b0b0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 2;
+}
+
+.modal-close:hover {
+  color: var(--accent);
+}
+
+.modal-header {
+  padding: 2rem 2rem 1rem;
+  border-bottom: 1px solid rgba(127, 90, 240, 0.2);
+}
+
+.modal-header h2 {
+  color: var(--accent);
+  margin: 0 0 0.5rem 0;
+}
+
+.modal-meta {
+  color: #b0b0b0;
+  font-size: 0.9rem;
+  margin: 0;
+  display: flex;
+  gap: 1rem;
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.modal-excerpt {
+  color: #e0e0e0;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.modal-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.modal-tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  background: rgba(var(--accent-rgb), 0.06);
+  border: 1px solid rgba(var(--accent-rgb), 0.18);
+  border-radius: 4px;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+.modal-description {
+  color: #b0b0b0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.modal-footer {
+  padding: 1.5rem 2rem;
+  border-top: 1px solid rgba(127, 90, 240, 0.2);
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.error-message {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+}
+
+.download-button {
+  padding: 0.75rem 1.5rem;
+  background: rgba(var(--accent-rgb), 0.12);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  color: #0b1220;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.95rem;
+}
+
+.download-button:hover:not(:disabled) {
+  background: rgba(var(--accent-rgb), 0.28);
+}
+
+.download-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

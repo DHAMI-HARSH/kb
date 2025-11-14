@@ -1,0 +1,145 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.95);
+  border-bottom: 1px solid rgba(127, 90, 240, 0.2);
+  padding: 1rem 0;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.navbar-logo:hover {
+  opacity: 0.8;
+}
+
+.logo-glow {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(var(--accent-rgb), 0.1);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  animation: glow 3s ease-in-out infinite;
+}
+
+.navbar-menu {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu a {
+  color: #e0e0e0;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar-menu a.active {
+  color: var(--accent);
+}
+
+.navbar-menu a:hover {
+  color: var(--accent);
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+}
+
+.signin-button {
+  padding: 0.5rem 1.5rem;
+  background: rgba(127, 90, 240, 0.2);
+  border: 1px solid #7f5af0;
+  border-radius: 4px;
+  color: var(--accent);
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.signin-button:hover {
+  background: rgba(127, 90, 240, 0.4);
+}
+
+.profile-section {
+  position: relative;
+}
+
+.profile-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(127, 90, 240, 0.3);
+  border: 2px solid #7f5af0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-avatar {
+  color: var(--accent);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  border-radius: 4px;
+  overflow: hidden;
+  min-width: 200px;
+}
+
+.dropdown-email {
+  padding: 0.75rem 1rem;
+  color: var(--accent);
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(127, 90, 240, 0.2);
+}
+
+.dropdown-logout {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.dropdown-logout:hover {
+  background: rgba(255, 107, 107, 0.2);
+  color: #ff8787;
+}

@@ -1,36 +1,210 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Knowledge Bank Engine
 
-## Getting Started
+A space-themed AI-powered knowledge management platform built with Next.js 16, React 19, and Firebase.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
+- **Landing Page** - Stunning parallax starfield with 3D planet animation
+- **Article Explorer** - Browse, search, and filter articles with infinite scroll
+- **AI Chatbot** - Real-time chat interface with source attribution
+- **Firebase Authentication** - Email/password and Google sign-in
+- **Protected Features** - Authenticated-only document downloads
+- **Responsive Design** - Mobile-first design with glassmorphism aesthetic
+- **Cosmic Theme** - Deep space colors with neon purple and cyan accents
+
+## 📋 Prerequisites
+
+- Node.js 18+ or Bun
+- A Firebase project (for authentication)
+
+## 🔧 Setup Instructions
+
+### 1. Clone and Install Dependencies
+
+\`\`\`bash
+# Clone the repository
+git clone <repo-url>
+cd knowledge-bank-engine
+
+# Install dependencies using your preferred package manager
+npm install
+# or
+bun install
+# or
+yarn install
+# or
+pnpm install
+\`\`\`
+
+### 2. Configure Firebase
+
+Create a `.env.local` file in the project root with your Firebase credentials:
+
+\`\`\`env
+NEXT_PUBLIC_FIREBASE_API_KEY=your_api_key
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+NEXT_PUBLIC_FIREBASE_APP_ID=your_app_id
+\`\`\`
+
+To get these values:
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Create a new project or select an existing one
+3. In Project Settings → General, scroll to "Your apps"
+4. Click "Web" and copy the firebaseConfig values
+
+### 3. Start Development Server
+
+\`\`\`bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+\`\`\`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit `http://localhost:3000` to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+\`\`\`
+app/
+├── layout.tsx              # Root layout with providers
+├── page.tsx                # Home page
+├── globals.css             # Global styles with design tokens
+├── providers.tsx           # Firebase Auth Context
+├── articles/
+│   └── page.tsx            # Articles page
+├── signin/
+│   └── page.tsx            # Sign in page
+├── signup/
+│   └── page.tsx            # Sign up page
+├── forgot-password/
+│   └── page.tsx            # Password reset page
+├── components/
+│   ├── client-layout.tsx   # Client-side layout wrapper
+│   ├── navbar.tsx          # Navigation bar
+│   ├── chatbot-panel.tsx   # Chatbot interface
+│   ├── article-card.tsx    # Article card component
+│   ├── starfield.tsx       # Starfield background
+│   ├── planet-model.tsx    # 3D planet animation
+│   ├── pages/              # Page components
+│   └── modals/             # Modal components
+├── styles/                 # Component-specific CSS
+└── styles/animations.css   # Shared animations
+\`\`\`
 
-## Learn More
+## 🎨 Design System
 
-To learn more about Next.js, take a look at the following resources:
+-- **Colors**: Deep space (#0a0e27), Purple accent (#7f5af0), Accent (white-shade `#f0f0f0`)
+- **Typography**: Geist Sans (headings), Geist Mono (code)
+- **Layout**: Flexbox-based responsive design
+- **Effects**: Glassmorphism, glow effects, smooth transitions
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🔌 API Integration
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The app includes mock API endpoints that should be replaced with your backend:
 
-## Deploy on Vercel
+- `GET /api/articles` - Fetch articles list
+- `GET /api/articles/:id` - Fetch single article
+- `POST /api/chat` - Send chatbot message
+- `POST /api/auth/login` - User login
+- `POST /api/auth/register` - User registration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Update the API base URL in the environment variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+\`\`\`env
+NEXT_PUBLIC_API_URL=http://localhost:5000
+\`\`\`
+
+## 📦 Available Scripts
+
+\`\`\`bash
+npm run dev       # Start development server
+npm run build     # Build for production
+npm start         # Start production server
+npm run lint      # Run ESLint
+\`\`\`
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+\`\`\`bash
+npm install -g vercel
+vercel
+\`\`\`
+
+### Deploy to Other Platforms
+
+Build the application:
+
+\`\`\`bash
+npm run build
+\`\`\`
+
+Then deploy the `.next` folder to your hosting platform.
+
+## 🔐 Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| NEXT_PUBLIC_FIREBASE_API_KEY | Yes | Firebase API key |
+| NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN | Yes | Firebase auth domain |
+| NEXT_PUBLIC_FIREBASE_PROJECT_ID | Yes | Firebase project ID |
+| NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET | Yes | Firebase storage bucket |
+| NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID | Yes | Firebase messaging sender ID |
+| NEXT_PUBLIC_FIREBASE_APP_ID | Yes | Firebase app ID |
+| NEXT_PUBLIC_API_URL | No | Backend API URL (default: http://localhost:5000) |
+
+## 🛠️ Technologies Used
+
+- **Framework**: Next.js 16 (App Router)
+- **UI Library**: React 19.2
+- **Styling**: Tailwind CSS v4
+- **Authentication**: Firebase Auth
+- **UI Components**: Radix UI + shadcn/ui
+- **Forms**: React Hook Form + Zod validation
+- **Animations**: CSS animations + Tailwind CSS
+
+## 📝 Development Notes
+
+### Adding New Pages
+
+1. Create a new folder in `app/` (e.g., `app/new-page/`)
+2. Add `page.tsx` with your page component
+3. Optionally add a component file in `app/components/pages/`
+
+### Adding New Components
+
+1. Create component file in `app/components/`
+2. Add styles in `app/styles/` if needed
+3. Use `'use client'` directive for interactive components
+
+### Firebase Setup
+
+The app uses Singleton pattern for Firebase clients. Update credentials in `app/providers.tsx`.
+
+## 🐛 Troubleshooting
+
+### Firebase Import Error
+- Ensure Firebase credentials are correctly set in `.env.local`
+- Verify Firebase project is active in Firebase Console
+
+### Styling Issues
+- Clear `.next` folder: `rm -rf .next`
+- Restart dev server
+
+### Build Errors
+- Run `npm install` to ensure all dependencies are installed
+- Check that all environment variables are set
+
+## 📄 License
+
+MIT License - Feel free to use this project as a template!
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+---
+
+Built with ❤️ using Next.js and React

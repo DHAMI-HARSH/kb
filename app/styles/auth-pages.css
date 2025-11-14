@@ -1,0 +1,209 @@
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(29, 18, 65, 0.8) 100%);
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 450px;
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98) 0%, rgba(25, 18, 60, 0.98) 100%);
+  border: 1px solid rgba(127, 90, 240, 0.3);
+  border-radius: 12px;
+  padding: 2.5rem;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  filter: none !important;
+  /* Removed blur effect that was causing blurry content */
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.auth-container h1 {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin: 0 0 0.75rem 0;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.auth-container > p {
+  color: #a0a0a0;
+  text-align: center;
+  margin: 0 0 2rem 0;
+  font-size: 0.95rem;
+}
+
+.auth-form {
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  color: #e0e0e0;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.85rem;
+  background: rgba(127, 90, 240, 0.08);
+  border: 1px solid rgba(127, 90, 240, 0.35);
+  border-radius: 6px;
+  color: #e0e0e0;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+}
+
+.form-group input::placeholder {
+  color: #707070;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.1);
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.12);
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+  border: none;
+  border-radius: 6px;
+  color: #0f172a;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.submit-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(127, 90, 240, 0.3);
+}
+
+.submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: #ff6b6b;
+  background: rgba(255, 107, 107, 0.1);
+  border: 1px solid rgba(255, 107, 107, 0.3);
+  padding: 0.9rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.success-message {
+  color: #6bff6b;
+  background: rgba(107, 255, 107, 0.1);
+  border: 1px solid rgba(107, 255, 107, 0.3);
+  padding: 0.9rem;
+  border-radius: 6px;
+  margin-bottom: 1.25rem;
+  font-size: 0.9rem;
+}
+
+.divider {
+  text-align: center;
+  color: #707070;
+  margin: 1.75rem 0;
+  position: relative;
+  font-size: 0.85rem;
+}
+
+.divider::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+  background: rgba(127, 90, 240, 0.2);
+  z-index: 0;
+}
+
+.divider {
+  position: relative;
+  z-index: 1;
+  background: rgba(30, 41, 59, 0.8);
+  padding: 0 1rem;
+}
+
+.google-button {
+  width: 100%;
+  padding: 0.85rem;
+  background: rgba(127, 90, 240, 0.1);
+  border: 1px solid rgba(127, 90, 240, 0.4);
+  border-radius: 6px;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.google-button:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.15);
+  color: var(--accent);
+}
+
+.google-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.auth-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.auth-links a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-size: 0.9rem;
+}
+
+.auth-links a:hover {
+  text-decoration: underline;
+  color: #7f5af0;
+}
+
+.auth-links span {
+  color: #707070;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: 1.75rem;
+  }
+
+  .auth-container h1 {
+    font-size: 1.5rem;
+  }
+}
