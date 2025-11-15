@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
+// Keep config untyped to avoid mismatches with Next.js type definitions
+// (some Next versions' `NextConfig` type may not include newer fields).
+const nextConfig = {
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true,

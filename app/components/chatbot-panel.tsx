@@ -19,10 +19,10 @@ interface ChatMessage {
 interface ChatbotPanelProps {
   isOpen: boolean;
   onClose: () => void;
-  docId: string; // document-specific
+  docId?: string; // document-specific (optional; default to 'global' when not provided)
 }
 
-export default function ChatbotPanel({ isOpen, onClose, docId }: ChatbotPanelProps) {
+export default function ChatbotPanel({ isOpen, onClose, docId = "global" }: ChatbotPanelProps) {
   const { user, getIdToken } = useAuth();
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [input, setInput] = useState("");
