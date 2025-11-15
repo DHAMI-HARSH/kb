@@ -7,7 +7,7 @@ import SignInModal from "@/app/components/modals/signin-modal";
 import "@/app/styles/chatbot-panel.css";
 
 // ✅ Correct import
-import { sendChatMessage } from "../lib/chat/sendChat";
+import { sendChatMessage } from "../../app/lib/chat/sendChat";
 
 interface ChatMessage {
   id: string;
